@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "restful api",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Fone",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.2.3",
+    "mongodb-stitch-browser-sdk": "^4.3.2",
+    "mongoose": "^5.5.5",
+    "nodemon": "^1.19.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
+  }
+}
