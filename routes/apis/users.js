@@ -13,9 +13,9 @@ const User = require("../../models/User");
 // $route GET apis/users/test
 // @desc   返回请求的json数据
 // @access public
-// router.get("/test", (req, res) => {
-//     res.json({msg: "login works"})
-// })
+router.get("/test", (req, res) => {
+    res.json({msg: "api works"})
+})
 
 // $route POST apis/users/register
 // @desc   返回请求的json数据

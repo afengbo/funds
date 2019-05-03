@@ -8,6 +8,7 @@ const app = express();
 
 // 引入users.js
 const users = require("./routes/apis/users");
+const profiles = require("./routes/apis/profiles");
 
 // mongodb 连接参数
 const db = require("./config/keys").mongoURI
@@ -43,7 +44,8 @@ app.get("/", (req, res) => {
 })
 
 // 使用routers
-app.use("/apis/users", users)
+app.use("/apis/users", users);
+app.use("/apis/profiles", profiles);
 
 const port = process.env.PORT || 5000;
 
