@@ -38,6 +38,7 @@ router.post("/register", (req, res) => {
                 password: req.body.password
             })
 
+            // 密码加密存储
             bcrypt.genSalt(saltRounds, function(err, salt) {
                 bcrypt.hash(newUser.password, salt, (err, hash) => {
                     if(err) throw err;
@@ -76,7 +77,7 @@ router.post("/login", (req, res) => {
                               identity:user.identity,
                             };
                           // 参数：规则，加盐，过期时间，箭头函数
-                          jwt.sign(rule, keys.secretOrKey, {expiresIn:3600}, (err, token) => {
+                          jwt.sign(rule, keys.secretOrKey, {expiresIn:10}, (err, token) => {
                               if(err) throw err;
                               res.json({
                                   success:true,
