@@ -77,7 +77,7 @@ router.post("/login", (req, res) => {
                               identity:user.identity,
                             };
                           // 参数：规则，加盐，过期时间，箭头函数
-                          jwt.sign(rule, keys.secretOrKey, {expiresIn:10}, (err, token) => {
+                          jwt.sign(rule, keys.secretOrKey, {expiresIn: 3600}, (err, token) => {
                               if(err) throw err;
                               res.json({
                                   success:true,
