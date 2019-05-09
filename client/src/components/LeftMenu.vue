@@ -9,22 +9,22 @@
         <router-link to="/home">
           <el-menu-item index="0">
             <i class="fa fa-margin fa-server"></i>
-            <span slot="title">首页</span>
+            <span slot="title"> 首页</span>
           </el-menu-item>
-          <template v-for="item in items">
-            <el-submenu v-if="item.children" :index="item.path" :key="item.path">
-              <template slot="title">
-                <i :class="'fa fa-margin'+item.icon"></i>
-                <span slot="title">{{item.name}}</span>
-              </template>
-              <router-link v-for="(citem, cindex) in item.children" :to="citem.path" :key="cindex">
-                <el-menu-item :index="citem.path">
-                  <span slot="title">{{citem.name}}</span>
-                </el-menu-item>
-              </router-link>
-            </el-submenu>
-          </template>
         </router-link>
+        <template v-for="item in items">
+          <el-submenu v-if="item.children" :index="item.path" :key="item.path">
+            <template slot="title">
+              <i :class="'fa fa-margin '+item.icon"></i>
+              <span slot="title"> {{item.name}}</span>
+            </template>
+            <router-link v-for="(citem, cindex) in item.children" :to="citem.path" :key="cindex">
+              <el-menu-item :index="citem.path">
+                <span slot="title">{{citem.name}}</span>
+              </el-menu-item>
+            </router-link>
+          </el-submenu>
+        </template>
       </el-menu>
     </el-col>
   </el-row>
